@@ -1,0 +1,34 @@
+1. Would it be possible for the user to develop a new command interpreter using the system-call interface provided by the operating system?
+   A:Yes, The command interpreter allows a user to create and manage processes and how they communicate. 
+   This functionality is available at user level and may allow someone to develop a new interpreter.
+   
+2. What is the relationship between a guest operating system and a host operating system in a system like VMware (as discussed in the book?) 
+   A: A guest operating system provides its services by mapping them onto the functionality provided by the host operating system.
+   What factors need to be considered in choosing the host operating system?
+   A: the host operating system needs to support the system calls / functionality required by the guest operating system.
+   
+3. What is the main advantage of the microkernel approach to system design? 
+   A: New functionality does not require changes to the kernel.  This leads to a less complex, more secure and more stable kernel.
+   How do user programs and system services interact in a microkernel architecture?
+   A: Inter-process communication are handled by the operating system between the user programs and system services.
+   
+4. What are some disadvantages of using the microkernel approach?
+   A: The overheads associated with inter-process communication and high use of the operating systems messaging.
+   
+5. What are the two models of interprocess communication? 
+   A: The message-passing model and the shared-memory model. 
+   What are the strengths and weaknesses of the two approaches?
+   A: Message passing is useful for exchanging smaller amounts of data, because no conflicts need be avoided. 
+   It is also easier to implement than is shared memory for intercomputer communication. 
+   Shared memory allows maximum speed and convenience of communication, since it can be done at memory transfer speeds when it takes place within a computer. 
+   Problems exist, however, in the areas of protection and synchronization between the processes sharing memory.
+   
+6. In what ways is the modular kernel approach similar to the layered approach? 
+   A: The modular kernel allows limited functionality interfaces  between internal systems and external modules.
+   In what ways does it diﬀer from the layered approach?
+   A: The layered approach is more locked down and restricted in what can be called between subsystem layers. Modular kernel is not limited in this fashion.
+   
+7. Collecting time information of programs is vitally important to performance measurements. 
+   What challenges do you see modern operating systems have to accurately collect this information?
+   A: Any performance metric over time could be affected by interrupts, cache hits/misses, scheduling of various processes and those metrics would need to be collected and 
+   analyzed not just for one processor but maybe over multiple processor/core/threads, and much more complex configurations.
